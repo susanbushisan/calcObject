@@ -1,6 +1,7 @@
 package top.mao196.calcobject.obj;
 
 
+import top.mao196.calcobject.strategy.CalcStrategy;
 import top.mao196.calcobject.strategy.CalcStrategyHolder;
 import top.mao196.calcobject.strategy.DefaultCalcStrategy;
 

@@ -1,4 +1,6 @@
-package top.mao196.calcobject.obj;
+package top.mao196.calcobject.strategy;
+
+import top.mao196.calcobject.obj.CalcObject;
 
 /**
  * 计算策略，用于处理基础计算逻辑

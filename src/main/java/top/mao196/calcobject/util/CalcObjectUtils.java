@@ -247,4 +247,14 @@ public class CalcObjectUtils {
         }
         return obj;
     }
+
+    public static<T> T unwrap(Object obj, Class<T> clz) {
+        if (obj == null) {
+            return null;
+        }
+        if (obj instanceof CalcObject) {
+            obj = ((CalcObject) obj).getValue();
+        }
+        return Convert.convert(clz, obj);
+    }
 }
