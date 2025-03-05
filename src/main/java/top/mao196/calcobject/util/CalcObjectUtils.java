@@ -81,34 +81,34 @@ public class CalcObjectUtils {
             obj = ((CalcObject) obj).getValue();
         }
         switch (calcType) {
-            case DOUBLE -> {
+            case DOUBLE: {
                 return parseDouble(obj);
             }
-            case BIG_DECIMAL -> {
+            case BIG_DECIMAL: {
                 return parseBigDecimal(obj);
             }
-            case BIG_INTEGER -> {
+            case BIG_INTEGER: {
                 return parseBigInteger(obj);
             }
-            case LONG -> {
+            case LONG : {
                 return parseLong(obj);
             }
-            case INTEGER -> {
+            case INTEGER : {
                 return parseInteger(obj);
             }
-            case STRING -> {
+            case STRING: {
                 return parseString(obj);
             }
-            case BOOLEAN -> {
+            case BOOLEAN : {
                 return parseBoolean(obj);
             }
-            case DATE_TIME -> {
+            case DATE_TIME : {
                 return parseDateTime(obj);
             }
-            case DATE -> {
+            case DATE : {
                 return parseDate(obj);
             }
-            case DURATION -> {
+            case DURATION :{
                 return parseDuration(obj);
             }
         }
@@ -192,7 +192,8 @@ public class CalcObjectUtils {
         long l;
         if (obj instanceof Long) {
             l = (long) obj;
-        } else if (obj instanceof Double d) {
+        } else if (obj instanceof Double) {
+            Double d = (Double) obj;
             if (d.isInfinite() || d.isNaN()) {
                 return CalcNull.instance();
             }
@@ -223,8 +224,8 @@ public class CalcObjectUtils {
 
     public static CalcObject parseDouble(Object obj) {
         double d;
-        if (obj instanceof Number numberObj) {
-            d = numberObj.doubleValue();
+        if (obj instanceof Number) {
+            d = ((Number)obj).doubleValue();
         } else {
             Double value = Convert.toDouble(obj);
             if (value == null) {

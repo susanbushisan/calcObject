@@ -122,11 +122,10 @@ public class DefaultCalcStrategy implements CalcStrategy {
     public CalcObject div(CalcObject a, CalcObject b) {
         boolean isNumberA = isNumber(a);
         boolean isNumberB = isNumber(b);
-        if (isNull(b) || (isNumberB&& ((CalcNumber)b).isZero())){
+        if (isNull(b) || (isNumberB && ((CalcNumber) b).isZero())) {
             // 任何数字除以0或者null都是null
             return CalcNull.instance();
-        }
-        else if (isNull(a) && isNumberB) {
+        } else if (isNull(a) && isNumberB) {
             // null / 任何数字的结果都是null
             return a;
         } else if (isNumberA && isNumberB) {
@@ -199,18 +198,28 @@ public class DefaultCalcStrategy implements CalcStrategy {
 
     @Override
     public CalcObject neg(CalcObject a) {
-        if (isNull(a)){
+        if (isNull(a)) {
             return a;
         }
         if (isNumber(a)) {
-            return switch (a.getCalcType()) {
-                case DOUBLE -> CalcDouble.valueOf(-((CalcDouble) a).doubleValue());
-                case BIG_DECIMAL -> CalcBigDecimal.valueOf(((CalcBigDecimal) a).bigDecimal().negate());
-                case INTEGER -> CalcInteger.valueOf(-((CalcInteger) a).intValue());
-                case LONG -> CalcLong.valueOf(-((CalcLong) a).longValue());
-                case BIG_INTEGER -> CalcBigInteger.valueOf(((CalcBigInteger) a).bigInteger().negate());
-                default -> null;
-            };
+            switch (a.getCalcType()) {
+                case DOUBLE:
+                    return CalcDouble.valueOf(-((CalcDouble) a).doubleValue());
+            }
+            switch (a.getCalcType()) {
+                case DOUBLE:
+                    return CalcDouble.valueOf(-((CalcDouble) a).doubleValue());
+                case BIG_DECIMAL:
+                    return CalcBigDecimal.valueOf(((CalcBigDecimal) a).bigDecimal().negate());
+                case INTEGER:
+                    return CalcInteger.valueOf(-((CalcInteger) a).intValue());
+                case LONG:
+                    return CalcLong.valueOf(-((CalcLong) a).longValue());
+                case BIG_INTEGER:
+                    return CalcBigInteger.valueOf(((CalcBigInteger) a).bigInteger().negate());
+                default:
+                    throw new ExpressionRuntimeException("Could not neg " + a);
+            }
         }
         if (a.getCalcType() == CalcType.BOOLEAN) {
             return CalcBoolean.valueOf(!((CalcBoolean) a).booleanValue());
@@ -287,8 +296,8 @@ public class DefaultCalcStrategy implements CalcStrategy {
         }
         CalcType aCalcType = a.getCalcType();
         CalcType bCalcType = b.getCalcType();
-        if (aCalcType == bCalcType){
-            return Objects.equals(a.getValue(),b.getValue());
+        if (aCalcType == bCalcType) {
+            return Objects.equals(a.getValue(), b.getValue());
         }
         return false;
     }
