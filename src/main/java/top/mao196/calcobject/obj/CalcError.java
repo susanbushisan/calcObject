@@ -5,7 +5,6 @@ import java.time.LocalDateTime;
 
 /**
  * @author susanbushisan
- * @date 2024/3/20
  **/
 public class CalcError extends CalcObject {
 

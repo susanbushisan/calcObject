@@ -2,7 +2,6 @@ package top.mao196.calcobject.obj;
 
 /**
  * @author susanbushisan
- * @date 2024/3/11
  **/
 public class CalcString extends CalcObject {
 

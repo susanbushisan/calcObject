@@ -5,7 +5,6 @@ import top.mao196.calcobject.obj.CalcObject;
 /**
  * 计算策略，用于处理基础计算逻辑
  * @author susanbushisan
- * @date 2024/5/21
  **/
 public interface CalcStrategy {
     CalcObject add(final CalcObject a, final CalcObject b);

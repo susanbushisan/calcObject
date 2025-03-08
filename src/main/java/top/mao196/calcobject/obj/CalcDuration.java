@@ -4,7 +4,6 @@ import java.time.Duration;
 
 /**
  * @author susanbushisan
- * @date 2024/3/20
  **/
 public class CalcDuration extends CalcObject {
 

@@ -7,7 +7,6 @@ import java.math.BigInteger;
 
 /**
  * @author susanbushisan
- * @date 2024/3/10
  **/
 public class CalcInteger extends CalcNumber {
 

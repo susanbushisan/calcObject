@@ -3,7 +3,6 @@ package top.mao196.calcobject.strategy;
 
 /**
  * @author susanbushisan
- * @date 2024/11/28
  **/
 public class CalcStrategyHolder {
 

@@ -3,7 +3,6 @@ package top.mao196.calcobject.obj;
 
 /**
  * @author susanbushisan
- * @date 2024/3/10
  **/
 public class CalcNull extends CalcObject {
 

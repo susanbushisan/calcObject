@@ -7,7 +7,6 @@ import top.mao196.calcobject.strategy.DefaultCalcStrategy;
 
 /**
  * @author susanbushisan
- * @date 2024/3/10
  **/
 public abstract class CalcObject {
 

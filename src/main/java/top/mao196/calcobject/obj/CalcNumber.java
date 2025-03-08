@@ -10,7 +10,6 @@ import java.math.BigInteger;
  * 与Null想加得到自身
  *
  * @author susanbushisan
- * @date 2024/3/10
  **/
 public abstract class CalcNumber extends CalcObject {
 

@@ -13,7 +13,6 @@ import java.util.Objects;
 
 /**
  * @author susanbushisan
- * @date 2024/11/28
  **/
 public class DefaultCalcStrategy implements CalcStrategy {
 
@@ -185,10 +184,9 @@ public class DefaultCalcStrategy implements CalcStrategy {
 
     /**
      * 获取两个对象的应该进行计算的类型
-     *
-     * @param a
-     * @param b
-     * @return
+     * @param a 计算对象a
+     * @param b 计算对象b
+     * @return 计算类型
      */
     public CalcType getNumberCalcType(CalcNumber a, CalcNumber b) {
         CalcType aCalcType = a.getCalcType();
@@ -234,9 +232,6 @@ public class DefaultCalcStrategy implements CalcStrategy {
      * 在比较的情况下Null和0一样进行比较
      * Error在类型相同的情况下返回0，其他情况下compare(Error,any)=1 compare(any,Error)=-1
      *
-     * @param a
-     * @param b
-     * @return
      */
     @Override
     public int compare(CalcObject a, CalcObject b) {
@@ -285,9 +280,6 @@ public class DefaultCalcStrategy implements CalcStrategy {
     /**
      * 如果两个对象不可比较，则返回false
      *
-     * @param a
-     * @param b
-     * @return
      */
     @Override
     public boolean eq(CalcObject a, CalcObject b) {
